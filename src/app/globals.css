@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+html { background: #f3f2ee; }
+body { margin: 0; color: #282826; font-family: system-ui, -apple-system, 'Malgun Gothic', sans-serif; line-height: 1.7; }
+.card { max-width: 440px; min-height: 100vh; margin: auto; background: #fff; text-align: center; box-shadow: 0 4px 25px #0000000b; }
+.hero { padding: 48px 28px 56px; }
+.eyebrow { font-size: 12px; letter-spacing: .22em; color: #777; }
+.photo { background: #eeeae4; aspect-ratio: 4/5; margin: 30px auto; display: grid; place-items: center; color: #777; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo small { font-size: 12px; }
+h1 { font-size: 26px; font-weight: 500; letter-spacing: -.03em; }
+h2 { font-size: 17px; font-weight: 600; margin: 0 0 24px; }
+section { padding: 54px 30px; border-top: 1px solid #f0eee9; }
+section p { margin: 6px 0; }
+.greeting { white-space: pre-line; line-height: 2; }
+.large { font-size: 20px; font-weight: 500; }
+.note { color: #886647; font-size: 12px; margin-top: 24px; }
+address { font-style: normal; color: #666; margin: 8px 0 20px; }
+.map-links, .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+a, button { border-radius: 6px; border: 1px solid #aaa39a; background: white; color: #282826; padding: 11px 14px; font: inherit; font-size: 13px; text-decoration: none; cursor: pointer; }
+a:hover, button:hover, a:focus-visible, button:focus-visible { background: #f1eee9; }
+.actions button { flex: 1 1 160px; }
+.status { flex-basis: 100%; font-size: 13px; }
+footer { padding: 38px; font-size: 12px; color: #888; }
+@media (max-width: 440px) { .card { box-shadow: none; } }

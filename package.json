@@ -1,0 +1,23 @@
+{
+  "name": "wedding-invitation-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "test": "node --test tests/calendar.test.mjs tests/site-url.test.mjs",
+    "test:export": "node --test tests/export.test.mjs",
+    "test:smoke": "node --test tests/invitation.test.mjs tests/og-image.test.mjs"
+  },
+  "dependencies": {
+    "next": "15.5.29",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}
