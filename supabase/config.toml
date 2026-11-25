@@ -1,0 +1,5 @@
+project_id = "wedding-invitation"
+
+[functions.contributions]
+verify_jwt = false
+entrypoint = './functions/contributions/index.js'

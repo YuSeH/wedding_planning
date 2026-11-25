@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
+import { siteUrl } from '../src/lib/site-url.mjs';
 
 const root = new URL('../out/', import.meta.url);
-const site = process.env.TEST_SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://example.github.io/wedding-invitation-starter';
+const site = process.env.TEST_SITE_URL || siteUrl();
 const path = new URL(site).pathname.replace(/\/$/, '');
 
 test('static export contains the invitation and assets under the Pages repo path', async () => {
@@ -15,4 +16,9 @@ test('static export contains the invitation and assets under the Pages repo path
   const image = await readFile(new URL('og.png', root));
   assert.deepEqual([...image.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
   assert.ok((await stat(new URL('og.png', root))).size > 1000);
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || process.env.NEXT_PUBLIC_SUBMISSIONS_ENABLED !== 'true') {
+    assert.match(html, /방명록과 사진을 준비 중입니다/);
+  } else {
+    assert.match(html, /축하의 마음 남기기/);
+  }
 });

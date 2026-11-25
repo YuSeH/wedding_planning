@@ -12,4 +12,5 @@ test('mobile invitation has sample content and share metadata at the public URL'
   assert.match(html, /오시는 길/);
   assert.match(html, /og:image/);
   assert.match(html, /캘린더에 저장/);
+  assert.match(html, /방명록과 사진/);
 });
